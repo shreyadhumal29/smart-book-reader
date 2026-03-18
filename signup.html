@@ -1,0 +1,77 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #1e1e1e;
+            color: white;
+            font-family: Arial;
+        }
+
+        .box {
+            background: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input {
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>📝 Signup</h2>
+
+    <input type="text" id="newUser" placeholder="Username"><br>
+    <input type="password" id="newPass" placeholder="Password"><br>
+
+    <button onclick="signup()">Signup</button>
+
+    <p id="msg"></p>
+
+    <p>Already have account? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+function signup() {
+    let user = document.getElementById("newUser").value.trim();
+    let pass = document.getElementById("newPass").value.trim();
+
+    if (user === "" || pass === "") {
+        document.getElementById("msg").innerText = "Fill all fields 😅";
+        return;
+    }
+
+    // save in browser
+    localStorage.setItem("username", user);
+    localStorage.setItem("password", pass);
+
+    document.getElementById("msg").innerText = "Signup successful ✅";
+
+    // go to login
+    setTimeout(() => {
+        window.location.href = "login.html";
+    }, 1000);
+}
+</script>
+
+</body>
+</html>

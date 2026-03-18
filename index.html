@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>Smart Book Reader</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
+if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html";
+}
+</script>
 <body>
 
+    <div class="glass">
     <h1>📚 Smart Book Reader</h1>
 
+    <input type="text" id="search" placeholder="Search books...">
+
+    <div class="books" id="bookList"></div>
+
+    <iframe id="viewer" width="100%" height="400px"></iframe>
+</div>
     <!-- Search Bar -->
     <input type="text" id="search" placeholder="Search books..." onkeyup="searchBooks()" />
 
@@ -30,19 +43,27 @@
 <script src="script.js"></script>
 <div class="chat-box">
 
+   <div class="chat-box">
+
     <h3>🤖 AI Chat</h3>
+
+    <div id="chatMessages" class="chat-messages"></div>
 
     <input type="text" id="question" placeholder="Ask..." />
 
-    <button type="button" onclick="askAI()">Ask</button>
-
-    <p id="answer"></p>
+    <button type="button" onclick="askAI()">Send</button>
 
 </div>
-<div class="balloons">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
 </div>
+<div class="books-bg">
+    <span>📚</span>
+    <span>📖</span>
+    <span>📘</span>
+    <span>📗</span>
+    <span>📙</span>
+</div>
+</div>
+<div class="glass">
+    <!-- your existing content here -->
+</div>
+<link rel="stylesheet" href="style.css">

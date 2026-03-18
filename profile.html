@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+    <style>
+        body {
+            background: #1e1e1e;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .box {
+            background: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="<img id="profilePic" src="" width="100" height="100" style="border-radius:50%;"><br><br>
+
+<input type="file" onchange="uploadImage(event)">">
+    <h2>👤 Profile</h2>
+    <p id="userName"></p>
+
+    <button onclick="goToApp()">Go to Book Reader 📚</button><br>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+// show username
+let user = localStorage.getItem("username");
+document.getElementById("userName").innerText = "Welcome, " + user;
+
+// go to main app
+function goToApp() {
+    window.location.href = "index.html";
+}
+
+// logout
+function logout() {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
+.box {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+}
+<style>
+body {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.box {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+button {
+    padding: 10px;
+    margin-top: 10px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>

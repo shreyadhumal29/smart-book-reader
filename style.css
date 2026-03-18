@@ -64,48 +64,213 @@ button {
     margin-top: 10px;
     font-size: 14px;
 }
-.balloons {
+.books-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
+    overflow: hidden;
 }
 
-.balloons {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.balloons span {
+.books-bg span {
     position: absolute;
-    bottom: -100px;
-    width: 40px;
-    height: 50px;
-    background: red;
-    border-radius: 50%;
-    animation: rise 10s infinite ease-in;
+    top: -50px;
+    font-size: 40px;
+    animation: fall linear infinite;
 }
 
-/* different colors */
-.balloons span:nth-child(1) { left: 10%; background: red; animation-duration: 8s; }
-.balloons span:nth-child(2) { left: 30%; background: blue; animation-duration: 10s; }
-.balloons span:nth-child(3) { left: 50%; background: green; animation-duration: 7s; }
-.balloons span:nth-child(4) { left: 70%; background: orange; animation-duration: 9s; }
-.balloons span:nth-child(5) { left: 90%; background: purple; animation-duration: 11s; }
+/* random timing */
+.books-bg span:nth-child(1) { left: 10%; animation-duration: 5s; }
+.books-bg span:nth-child(2) { left: 30%; animation-duration: 7s; }
+.books-bg span:nth-child(3) { left: 50%; animation-duration: 6s; }
+.books-bg span:nth-child(4) { left: 70%; animation-duration: 8s; }
+.books-bg span:nth-child(5) { left: 90%; animation-duration: 9s; }
 
-@keyframes rise {
+
+/* different positions + speed */
+.books-bg span:nth-child(1) {
+    left: 10%;
+    animation-duration: 6s;
+}
+
+.books-bg span:nth-child(2) {
+    left: 30%;
+    animation-duration: 8s;
+}
+
+.books-bg span:nth-child(3) {
+    left: 50%;
+    animation-duration: 5s;
+}
+
+.books-bg span:nth-child(4) {
+    left: 70%;
+    animation-duration: 7s;
+}
+
+.books-bg span:nth-child(5) {
+    left: 90%;
+    animation-duration: 9s;
+}
+
+@keyframes fall {
     0% {
-        transform: translateY(0);
-        opacity: 1;
+        transform: translateY(-50px) rotate(0deg);
     }
     100% {
-        transform: translateY(-100vh);
-        opacity: 0;
+        transform: translateY(100vh) rotate(360deg);
     }
+}
+
+.chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+.user-msg {
+    background: #007bff;
+    color: white;
+    padding: 6px;
+    margin: 5px;
+    border-radius: 8px;
+    text-align: right;
+}
+
+.bot-msg {
+    background: #e0e0e0;
+    padding: 6px;
+    margin: 5px;
+    border-radius: 8px;
+    text-align: left;
+}
+.chat-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+}
+
+.chat-messages {
+    height: 250px;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.user-msg {
+    background: #4caf50;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: right;
+}
+
+.bot-msg {
+    background: #333;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+}
+.chat-box input {
+    width: 70%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.chat-box button {
+    width: 25%;
+    padding: 8px;
+    background: #00c853;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+}
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* glass card */
+.glass {
+    width: 80%;
+    margin: 50px auto;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+}
+
+/* books */
+.books p {
+    cursor: pointer;
+    padding: 8px;
+}
+
+.books p:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* chat */
+.chat-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+}
+
+.chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.user-msg {
+    background: #4caf50;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: right;
+}
+
+.bot-msg {
+    background: #333;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
 }
